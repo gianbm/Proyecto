@@ -20,7 +20,7 @@ if(user.value.trim() === '' || password.value.trim() === ''){
     location.href ='index.html';
 
     users.nombre = user.value;
-    users.estado = 'conectado';
+    users.estado = "conectado";
 
     localStorage.setItem('users', JSON.stringify(users));
     sessionStorage.setItem('users', JSON.stringify(users));
@@ -32,7 +32,7 @@ if(user.value.trim() === '' || password.value.trim() === ''){
 
 document.addEventListener("DOMContentLoaded", ()=> {
     let users =  JSON.parse( localStorage.getItem('users'))
-    if(users.estado == 'conectado'){
+    if(users.estado == "conectado"){
         location.href = 'index.html'}   
     
 
