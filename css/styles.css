@@ -140,11 +140,16 @@ a.custom-card:hover {
   color: orange;
 }
 
+
 #img{
   display: flex;
   justify-content: center;
   align-items: center;
   
+}
+
+#desconectar{
+  background-color: red;
 }
 
 
@@ -177,17 +182,6 @@ a.custom-card:hover {
   border: 1px solid rgb(34,159,188);
 }
 
-.boton-out{
-  position: absolute;
-  z-index: 1;
-  width: 4%;
-  height: 10%;
-  border-radius: 50%;
-  border: 1px solid red;
-  background-color: red;
-}
-
-
 .abcRioButtonContentWrapper{
   color: white;
   background-color: rgb(34,159,188);
@@ -197,3 +191,4 @@ a.custom-card:hover {
   height: 100%;
   background-color: white;
 }
+
