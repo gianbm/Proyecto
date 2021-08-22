@@ -200,3 +200,9 @@ a.custom-card:hover {
   background-color: red;
   color: white;
 }
+
+.precio{  
+  margin-left: 88%;
+  font-weight: bold;
+  font-size: x-large;
+}
