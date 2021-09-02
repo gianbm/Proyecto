@@ -5,7 +5,7 @@ function verificar(){
 let user = document.getElementById('user')
 let password = document.getElementById('pass')
 let msj = document.getElementById('msj')
-let users = {}
+let users = {};
 
 if(user.value.trim() === '' || password.value.trim() === ''){
     //Valido - Invalido
@@ -19,7 +19,7 @@ if(user.value.trim() === '' || password.value.trim() === ''){
     
     location.href ='index.html';
 
-    users.nombre = user.value;
+    users.nombre = user.value
     users.estado = "conectado";
 
     localStorage.setItem('users', JSON.stringify(users));
