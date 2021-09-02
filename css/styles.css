@@ -206,3 +206,9 @@ a.custom-card:hover {
   font-weight: bold;
   font-size: x-large;
 }
+
+#busqueda{
+  width: 80%;
+  border: 1px solid black;
+  margin-left: 10%;
+}
