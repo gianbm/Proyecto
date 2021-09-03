@@ -209,6 +209,28 @@ a.custom-card:hover {
 
 #busqueda{
   width: 80%;
-  border: 1px solid black;
+  border: 1px solid rgb(110, 104, 104);
   margin-left: 10%;
+  margin-top: 1%;
+  display: flex;
 }
+
+#precio{
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
+}
+
+#precio input{
+  margin-left: 2%;
+}
+
+#precio button{
+  margin-left: 2%;
+}
+
+#orden{
+  margin-left: 5%;
+}
+
+

@@ -32,6 +32,19 @@ function showCategoriesList(array){
     
 }
 
+function ornderPorPrecio(){
+    let min = document.getElementById('min')
+    let max = document.getElementById('max')
+
+    if ( min == undefined || min != undefined && parseInt(category.cost) >= min){
+
+    }
+}
+
+
+
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

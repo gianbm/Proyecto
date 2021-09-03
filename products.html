@@ -26,7 +26,17 @@
       </div>
     </nav>
     <div id="busqueda">
-      <input type="search">
+      <div id="precio">
+        <p>Precio:</p>
+        <input type="number" id="minimo" placeholder="min."> 
+        <input type="number" id="maximo" placeholder="max.">
+        <button class="btn btn-light" id="filtro">Filtrar</button>
+        <button class="btn btn-light" id="clear">Limpiar</button>
+      </div>
+      <div id="orden">
+        <button class="btn btn-light" id="arriba">Ascendente</button>
+        <button class="btn btn-light" id="abajo">Descendente</button>
+      </div>
     </div>
     <div id="productos"></div>
     <button class="btn" id="desconectar"   onclick="desconectar();">Desconectar</button>
