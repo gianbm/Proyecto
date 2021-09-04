@@ -28,9 +28,9 @@
     <div id="busqueda">
       <div id="precio">
         <p>Precio:</p>
-        <input type="number" id="minimo" placeholder="min."> 
-        <input type="number" id="maximo" placeholder="max.">
-        <button class="btn btn-light" id="filtro">Filtrar</button>
+        <input type="number" id="minimo" placeholder="min." value="0">
+        <input type="number" id="maximo" placeholder="max." value="100000000000">
+        <button id="filtrar" class="btn btn-light" onclick="showProductsList()">Filtrar</button>
         <button class="btn btn-light" id="clear">Limpiar</button>
       </div>
       <div id="orden">
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div id="productos"></div>
-    <button class="btn" id="desconectar"   onclick="desconectar();">Desconectar</button>
+    <button class="btn" id="desconectar" onclick="desconectar();">Desconectar</button>
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
