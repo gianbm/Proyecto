@@ -13,6 +13,7 @@
         let users = {};
         
         users.nombre = profile.getName()
+        users.img = profile.getImageUrl()
    
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);

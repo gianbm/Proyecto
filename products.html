@@ -17,7 +17,7 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <div class="container d-flex flex-column flex-md-row justify-content-between" id="menu">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -27,15 +27,15 @@
     </nav>
     <div id="busqueda">
       <div id="precio">
-        <p>Precio:</p>
-        <input type="number" id="minimo" placeholder="min." value="0">
-        <input type="number" id="maximo" placeholder="max." value="100000000000">
+        <input type="number" id="minimo" placeholder="Precio minimo" >
+        <input type="number" id="maximo" placeholder="Precio maximo" >
         <button id="filtrar" class="btn btn-light" onclick="showProductsList()">Filtrar</button>
-        <button class="btn btn-light" id="clear">Limpiar</button>
+        <button class="btn btn-light" id="clear" onclick="clear()">Limpiar</button>
       </div>
       <div id="orden">
-        <button class="btn btn-light" id="arriba">Ascendente</button>
-        <button class="btn btn-light" id="abajo">Descendente</button>
+        <button class="btn btn-light" id="asc">Precio ascendente</button>
+        <button class="btn btn-light" id="des">Precio descendente</button>
+        <button class="btn btn-light" id="rel">Más relevantes primero</button>
       </div>
     </div>
     <div id="productos"></div>
@@ -55,6 +55,7 @@
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
     <script src="js/google.js"></script>
+    <script src="js/my-profile.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
   </body>
 </html>

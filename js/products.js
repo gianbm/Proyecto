@@ -2,7 +2,6 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-
 let productsArray = [];
 
 function showProductsList(array){
@@ -10,11 +9,18 @@ function showProductsList(array){
     if(array == undefined){
         array = productsArray;
     }
+  
+
 
     let minimo = document.getElementById('minimo').value;
     let maximo = document.getElementById('maximo').value;
 
+    if(maximo == 0 || maximo == undefined){
+        maximo = 1000000000000;
+    }
+
     let htmlContentToAppend = "";   
+
 
     for(let i = 0; i < array.length; i++){
         let products = array[i];
@@ -44,6 +50,53 @@ function showProductsList(array){
     
 }
 
+function ordenarASC(){
+    productsArray.sort((a, b) =>{
+        if(a.cost > b.cost){
+            return 1;
+        }
+        if(a.cost < b.cost){
+            return -1;
+        } else{
+            return 0;
+        }
+    });
+
+    showProductsList()
+};
+
+function ordenarDES(){
+    productsArray.sort((a, b) =>{
+        if(a.cost < b.cost){
+            return 1;
+        }
+        if(a.cost > b.cost){
+            return -1;
+        } else{
+            return 0;
+        }
+    });
+
+    showProductsList()
+};
+
+function ordenarREL(){
+    productsArray.sort((a, b) =>{
+        if(a.soldCount < b.soldCount){
+            return 1;
+        }
+        if(a.soldCount > b.soldCount){
+            return -1;
+        } else{
+            return 0;
+        }
+    });
+
+    showProductsList()
+};
+
+
+
 
 
 
@@ -62,6 +115,25 @@ document.addEventListener("DOMContentLoaded", function(e){
             showProductsList(productsArray);
         }
     });
+
+    document.getElementById('clear').addEventListener('click', function(){
+        document.getElementById('minimo').value = ""
+        document.getElementById('maximo').value = ""
+        
+        showProductsList()
+    });
+
+    document.getElementById('asc').addEventListener('click', () =>{
+        ordenarASC();
+    });
+
+    document.getElementById('des').addEventListener('click', () =>{
+        ordenarDES();
+    })
+
+    document.getElementById('rel').addEventListener('click', () =>{
+        ordenarREL();
+    })
 
 });
 
