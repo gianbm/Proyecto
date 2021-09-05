@@ -27,7 +27,7 @@ function showProductsList(array){
         if( products.cost >= minimo && products.cost <= maximo){
 
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action w-100% mt-1 ">
+            <div class="list-group-item list-group-item-action  mt-1 " id="cont">
                 <div class="row">
                     <div class="col-3">
                         <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-thumbnail">
@@ -94,11 +94,6 @@ function ordenarREL(){
 
     showProductsList()
 };
-
-
-
-
-
 
 
 

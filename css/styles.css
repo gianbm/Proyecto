@@ -196,6 +196,13 @@ a.custom-card:hover {
   background-color: white;
 }
 
+.desc{
+  position: sticky;
+  top: 90%;
+  margin-left: 97%;
+  z-index: 1;
+}
+
 #desconectar{
   background-color: red;
   color: white;
@@ -205,6 +212,7 @@ a.custom-card:hover {
   margin-left: 88%;
   font-weight: bold;
   font-size: x-large;
+  
 }
 
 #busqueda{
@@ -228,8 +236,23 @@ a.custom-card:hover {
   margin-left: 2%;
 }
 
+.filter{
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+
 #orden{
   margin-left: 5%;
 }
 
+.row{
+  width: 100%;
+ }
+
+#cont{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
