@@ -22,8 +22,8 @@ function showProductsList(array){
     let htmlContentToAppend = "";   
 
 
-    for(let i = 0; i < array.length; i++){
-        let products = array[i];
+    for(products of productsArray){
+        
         if( products.cost >= minimo && products.cost <= maximo){
 
             htmlContentToAppend += `
