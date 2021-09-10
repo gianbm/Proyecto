@@ -295,3 +295,71 @@ label:hover ~ label {
 input[type="radio"]:checked ~ label {
   color: gold;
 }
+
+.prodInfo h2{
+  font-size: 50px;
+  text-align: center;
+}
+
+
+.galeria{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.galeria img{
+  width: 30%;
+  margin: 1%;
+}
+
+.costo{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.costo p{
+  margin-left: 5%;
+}
+
+.pr{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.ventas{
+  font-size: 17px;
+  color: gray;
+  margin-top: -5%;
+}
+
+.descripcion{
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.Idesc{
+  text-align: center;
+  font-size: 20px;
+}
+
+.COM{
+  width: 100%;
+}
+
+.titulo{
+  text-align: center;
+}
+
+
+
+
+
