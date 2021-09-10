@@ -26,7 +26,7 @@ function showProductsList(array){
         
         if( products.cost >= minimo && products.cost <= maximo){
 
-            htmlContentToAppend += `
+            htmlContentToAppend += `<a href='product-info.html'>
             <div class="list-group-item list-group-item-action  mt-1 " id="cont">
                 <div class="row">
                     <div class="col-3">
@@ -38,10 +38,12 @@ function showProductsList(array){
                             <small class="text-muted">` + products.soldCount + ` artículos</small>
                         </div>
                             <p class="mb-1">` + products.description + `</p>
-                    </div>            
+                    </div>  
+                    <p class="precio">Precio:` + products.cost + `</p>            
                 </div>
-                <p class="precio">Precio:` + products.cost + `</p>   
+                 
             </div>
+            </a>
             `
 
             document.getElementById("productos").innerHTML = htmlContentToAppend;

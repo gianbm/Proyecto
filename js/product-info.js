@@ -1,4 +1,5 @@
 let info = [];
+let coments = [];
 
 function mostrarInfo(inf){
     
@@ -7,6 +8,24 @@ function mostrarInfo(inf){
         <div>`+ inf.name +`</div>
 
     </div>`
+};
+
+function mostrarComentarios(com){
+    let comentS= "";
+
+    for(comentarios of coments){
+
+    comentS = 
+    `
+    <div class='comentarios'>
+    <h4>`+ comentarios.user +`</h4>
+    <p>`+ comentarios.description +`</p>
+    <small class="text-muted">Fecha: ` + comentarios.dateTime + `</small>
+    </div>
+    `
+    }
+
+    document.getElementById('comentS').innerHTML = comentS;
 };
 
 
@@ -21,6 +40,14 @@ document.addEventListener("DOMContentLoaded", function(e){
         if(resultObj.status === 'ok'){
             info = resultObj.data;
             mostrarInfo(info)
+
+        }
+    })
+
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObjs){
+        if(resultObjs.status === 'ok'){
+            coments = resultObjs.data;
+            mostrarComentarios(coments)
 
         }
     })
