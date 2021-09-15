@@ -359,6 +359,23 @@ input[type="radio"]:checked ~ label {
   text-align: center;
 }
 
+.comentarios{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1%;
+  padding: 1%;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+#comentar{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#coment{
+  width: 100%;
+}
 
 
 

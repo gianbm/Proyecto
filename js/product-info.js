@@ -34,8 +34,9 @@ function mostrarComentarios(com){
     comentS = 
     `
     <div class='comentarios'>
-    <h4>`+ com.user +`</h4> 
+    <h5>`+ com.user +`</h5> 
     <p>`+ com.description +`</p>
+    <p>`+ com.score +`</p>
     <small class="text-muted">Fecha: ` + com.dateTime + `</small>
     </div>
     `
