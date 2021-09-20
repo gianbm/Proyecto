@@ -25,6 +25,24 @@ function mostrarInfo(inf){
     </div>`
 };
 
+function mostrarEstrellas(score){
+    let estrellita = "";
+
+    for(let i=1; i<=5; i++){
+        if(i <= score){
+            estrellita += `<span class='llena'><i class="fas fa-circle"></i></span>`
+        } else {
+            estrellita += `<span class='vacio'><i class="fas fa-circle"></i></span>`
+        }
+    }
+
+    return estrellita;
+}
+
+function borrarEstrellas(){
+    document.querySelectorAll('[Type=radio]').forEach((x) => x.checked=false);
+}
+
 
 function mostrarComentarios(com){
     let comentS= "";
@@ -35,8 +53,8 @@ function mostrarComentarios(com){
     `
     <div class='comentarios'>
     <h5>`+ com.user +`</h5> 
+    <p>`+ mostrarEstrellas(parseInt(com.score)) +`</p>
     <p>`+ com.description +`</p>
-    <p>`+ com.score +`</p>
     <small class="text-muted">Fecha: ` + com.dateTime + `</small>
     </div>
     `
@@ -45,6 +63,7 @@ function mostrarComentarios(com){
     }
 
 };
+
 
 
 
@@ -68,5 +87,23 @@ document.addEventListener("DOMContentLoaded", function(e){
             mostrarComentarios(comentsArray)
 
         }
+    })
+
+    document.getElementById('coment').addEventListener('click', () => {
+        let comentA = [];
+        comentA.score =  parseInt(document.getElementById('score').value)
+        comentA.user = document.getElementById('user').value
+        comentA.description = document.getElementById('description').value
+        comentA.dataTime = ""
+
+        if(comentA.user.trim()==""){
+            alert('Por favor ingrese su nombre de usario')
+        } else {
+            comentsArray.push(comentA)
+            mostrarComentarios(comentsArray)
+        }
+        
+        
+
     })
 });
