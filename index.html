@@ -21,12 +21,22 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="btn-group" >
+          <button class="btn btn-secondary" id='users' type="button" >
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" >
+            <button class="dropdown-item" type="button" >Mi perfil</button>
+            <button class="dropdown-item" type="button" id="cart">Mi carrito</button>
+            <button class="dropdown-item desc" type="button" onclick="desconectar();">Cerrar sesion</button>
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="desc">
-      <button class="btn" id="desconectar" onclick="desconectar();">X</button>
-    </div>
+    
+
     <main role="main">
       <section class="jumbotron text-center">
         <div class="m-5">

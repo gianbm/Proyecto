@@ -46,9 +46,23 @@ function desconectar(){
   location.href = 'login.html';
 }
 
+function usuario(){
+  let user = JSON.parse(localStorage.getItem('users'))
+
+  document.getElementById('users').innerHTML += user.nombre
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
- 
+  usuario()
+
+  document.getElementById('users').addEventListener('click', () =>{
+    location.href = 'my-profile.html'
+  })
+
+  document.getElementById('cart').addEventListener('click', () =>{
+    location.href = 'cart.html'
+  })
 });

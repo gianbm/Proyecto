@@ -196,17 +196,19 @@ a.custom-card:hover {
   background-color: white;
 }
 
-.desc{
-  position: sticky;
-  top: 90%;
-  margin-left: 97%;
-  z-index: 1;
+#desconectar{
+  width: 100%;
+  height: 100%;
 }
 
-#desconectar{
+
+#desconectar:hover{
   background-color: red;
-  color: white;
+  font-weight: bold;
+
 }
+
+
 
 .precio{  
   margin-left: 88%;
@@ -432,6 +434,9 @@ span{
   margin-bottom: 2%;
 }
 
+.desc:hover{
+  background-color: red;
+}
 
 
 
