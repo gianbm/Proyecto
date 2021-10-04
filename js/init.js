@@ -58,7 +58,7 @@ function usuario(){
 document.addEventListener("DOMContentLoaded", function(e){
   usuario()
 
-  document.getElementById('users').addEventListener('click', () =>{
+  document.getElementsByClassName('users').addEventListener('click', () =>{
     location.href = 'my-profile.html'
   })
 
