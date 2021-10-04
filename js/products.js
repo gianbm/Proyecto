@@ -44,7 +44,7 @@ function showProductsList(array){
                  
             </div>
             </a>
-            `
+            `   
 
             document.getElementById("productos").innerHTML = htmlContentToAppend;
         } 

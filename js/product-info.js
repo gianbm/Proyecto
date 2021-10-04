@@ -1,17 +1,37 @@
 let info = [];
 let comentsArray = [];
+let productos = [];
 
 function mostrarInfo(inf){
     
     document.getElementById('infoProducts').innerHTML = 
     `<div class='prodInfo'> 
         <h2>`+ inf.name +`</h2>
-        <div class='galeria'>
-            <img src="`+ inf.images[0] +`" alt="">
-            <img src="`+ inf.images[1] +`" alt="">
-            <img src="`+ inf.images[2] +`" alt="">
-            <img src="`+ inf.images[3] +`" alt="">
-            <img src="`+ inf.images[4] +`" alt="">
+
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="`+inf.images[1]+`" class="d-block w-100" >
+                </div>
+                <div class="carousel-item">
+                    <img src="`+inf.images[2]+`" class="d-block w-100" >
+                </div>
+                <div class="carousel-item">
+                    <img src="`+inf.images[3]+`" class="d-block w-100" >
+                </div>
+                <div class="carousel-item">
+                    <img src="`+inf.images[4]+`" class="d-block w-100" >
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#slider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#slider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
         </div>
         <div class='descripcion'>
         <div class='costo'>
@@ -59,15 +79,26 @@ function mostrarComentarios(com){
     </div>
     `
 
-    document.getElementById('comen').innerHTML += comentS;
+    
     }
+    document.getElementById('comen').innerHTML += comentS;
 
 };
 
+function mostrarRel(){
+    let rela = "";
+    info.relatedProducts.forEach((i) => {
+        rela += `<div class="card" style="width: 18rem;">
+                    <img src="`+productos[i].imgSrc+`" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text">`+productos[i].description+`</p>
+                    </div>
+                    <p><b>Precio: `+productos[i].cost+`</b></p>
+                </div>`
+    })
 
-
-
-
+    document.getElementById('relacionados').innerHTML += rela;
+}
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -78,9 +109,18 @@ document.addEventListener("DOMContentLoaded", function(e){
         if(resultObj.status === 'ok'){
             info = resultObj.data;
             mostrarInfo(info)
-
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if(resultObj.status === 'ok'){
+                    productos = resultObj.data
+                    mostrarRel()
+                }
+            })
         }
     })
+
+
+
+    
 
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObjs){
         if(resultObjs.status === 'ok'){
@@ -103,8 +143,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             comentsArray.push(comentA)
             mostrarComentarios(comentsArray)
         }
-        
-        
 
     })
+    
 });

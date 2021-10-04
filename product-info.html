@@ -80,8 +80,10 @@
     </div>
     </div>
 
-
-    <div id='relacionados'>
+    <hr>
+    <div id='relacionados'  >
+      
+      
     </div>
     <footer class="text-muted">
       <div class="container">
@@ -113,6 +115,14 @@
       src="https://apis.google.com/js/platform.js?onload=onLoad"
       async
       defer
-    ></script>
+    >
+     $(document).ready(function(){
+      $('.carousel').carousel({
+          interval: 2500
+      })
+     })
+  </script>
+
+  
   </body>
 </html>

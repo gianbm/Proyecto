@@ -438,6 +438,20 @@ span{
   background-color: red;
 }
 
+#slider{
+  margin: auto;
+  width: 50%;
+}
+
+#relacionados{
+  display: flex;
+  justify-content: center;
+  
+}
+
+#relacionados div{
+  margin: 2%;
+}
 
 
 
