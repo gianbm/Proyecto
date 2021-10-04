@@ -58,11 +58,4 @@ function usuario(){
 document.addEventListener("DOMContentLoaded", function(e){
   usuario()
 
-  document.getElementsByClassName('users').addEventListener('click', () =>{
-    location.href = 'my-profile.html'
-  })
-
-  document.getElementById('cart').addEventListener('click', () =>{
-    location.href = 'cart.html'
-  })
 });
