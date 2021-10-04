@@ -79,9 +79,9 @@ function mostrarComentarios(com){
     </div>
     `
 
-    
-    }
     document.getElementById('comen').innerHTML += comentS;
+    }
+    
 
 };
 
