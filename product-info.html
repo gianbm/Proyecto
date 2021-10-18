@@ -28,6 +28,44 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
   </head>
+  <style>
+    .calificacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.calificacion input {
+position: absolute;
+  top: -100px;
+}
+
+
+.calificacion label {
+  float: right;
+  color: #867b7b;
+  font-size: 30px; 
+}
+
+.calificacion label:hover,
+.calificacion label:hover ~ label,
+.calificacion input:checked ~ label {
+  color:gold;
+}
+span{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  color: blue;
+}
+
+.llena{
+  color: gold;
+}
+
+.vacio{
+  color: red;
+}
+  </style>
 
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">

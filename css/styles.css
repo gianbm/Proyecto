@@ -262,41 +262,7 @@ a.custom-card:hover {
   text-decoration: none;
 }
 
-#clasi {
-  width: 10%;
-  margin: 0 auto;
-  height: 5%;
-}
 
-#clasi p {
-  text-align: center;
-}
-
-#clasi label {
-  font-size: 30px;
-}
-
-.clasificacion input[type="radio"] {
-  display: none;
-}
-
-.clasificacion label {
-  color: grey;
-}
-
-.clasificacion {
-  direction: rtl;
-  unicode-bidi: bidi-override;
-}
-
-label:hover,
-label:hover ~ label {
-  color: gold;
-}
-
-input[type="radio"]:checked ~ label {
-  color: gold;
-}
 
 .prodInfo h2{
   font-size: 50px;
@@ -375,42 +341,7 @@ input[type="radio"]:checked ~ label {
   margin: 0 auto;
 }
 
-.calificacion {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
 
-.calificacion input {
-position: absolute;
-  top: -100px;
-}
-
-
-.calificacion label {
-  float: right;
-  color: #867b7b;
-  font-size: 30px; 
-}
-
-.calificacion label:hover,
-.calificacion label:hover ~ label,
-.calificacion input:checked ~ label {
-  color:gold;
-}
-span{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 400;
-  color: blue;
-}
-
-.llena{
-  color: gold;
-}
-
-.vacio{
-  color: red;
-}
 
 #comentar{
   display: flex;
@@ -452,6 +383,26 @@ span{
 #relacionados div{
   margin: 2%;
 }
+
+#prod{
+  margin: 1%;
+}
+
+#productosV{
+  width: 70%;
+  margin: 0px auto ;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
