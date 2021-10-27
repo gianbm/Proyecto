@@ -17,37 +17,45 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between" id="menu">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="btn-group" >
-          <a href="my-profile.html"><button class="btn btn-secondary" type="button" id='users'></button></a>
-          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <div class="dropdown-menu" >
-          <a href="my-profile.html"><button class="dropdown-item" type="button" >Mi perfil</button></a>
-            <a href="cart.html"><button class="dropdown-item" type="button" id="cart">Mi carrito</button></a>
-            <button class="dropdown-item desc" type="button" onclick="desconectar();">Cerrar sesion</button>
+      <div class="container">
+        <div class="row">
+          <a class="col-sm-3 py-2" href="index.html">Inicio</a>
+          <a class="col-sm-3 py-2" href="categories.html">Categorías</a>
+          <a class="col-sm-3 py-2 " href="products.html">Productos</a>
+          <a class="col-sm-3 py-2 " href="sell.html">Vender</a>
+          <div class="col-sm btn-group" >
+            <a href="my-profile.html"><button class="btn btn-secondary" type="button" id='users'></button></a>
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu" >
+            <a href="my-profile.html"><button class="dropdown-item" type="button" >Mi perfil</button></a>
+              <a href="cart.html"><button class="dropdown-item" type="button" id="cart">Mi carrito</button></a>
+              <button class="dropdown-item desc" type="button" onclick="desconectar();">Cerrar sesion</button>
+            </div>
           </div>
         </div>
       </div>
     </nav>
-    <h1 style="text-align: center;">PRDUCTOS</h1>
-    <div id="busqueda">
-      <div id="precio">
-        <input type="number" class="filter" id="minimo" placeholder="Precio minimo" >
-        <input type="number" class="filter" id="maximo" placeholder="Precio maximo" >
-        <button id="filtrar" class="btn btn-success" onclick="showProductsList()">Filtrar</button>
-        <button class="btn btn-warning" id="clear" onclick="clear()">Limpiar</button>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-7"><h1 style="text-align: center;">PRDUCTOS</h1></div>
       </div>
-      <div id="orden">
-        <button class="btn btn-dark" id="asc">Precio ascendente</button>
-        <button class="btn btn-dark" id="des">Precio descendente</button>
-        <button class="btn btn-dark" id="rel">Más relevantes primero</button>
+      <div class="row justify-content-center ml-3">
+        <div class="col-sm-7" >
+          <input type="number" class="filter" id="minimo" placeholder="Precio minimo" >
+          <input type="number" class="filter" id="maximo" placeholder="Precio maximo" >
+          <button id="filtrar" class="btn btn-success" onclick="showProductsList()">Filtrar</button>
+          <button class="btn btn-warning" id="clear" onclick="clear()">Limpiar</button>
+        </div>
       </div>
+        <div class="row justify-content-center ml-3 mt-3">
+          <div class="col-sm-7">
+            <button class="btn btn-dark" id="asc">Precio ascendente</button>
+            <button class="btn btn-dark" id="des">Precio descendente</button>
+            <button class="btn btn-dark" id="rel">Más relevantes primero</button>
+          </div>
+        </div> 
     </div>
     <div class="row">
       <div class="list-group" id="productos"></div>

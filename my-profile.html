@@ -43,7 +43,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="btn-group" >
-        <a href="my-profile.html"><button class="btn btn-secondary" type="button" id='users'></button></a>
+        <a href="my-profile.html"><button class="btn btn-secondary" id="users" type="button" ></button></a>
         <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -55,13 +55,50 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container mt-5 mb-5" id="data">
+    <div class="row justify-content-center">
+      <div class="col-sm-4 " id="imagen">Imagen perfil</div>
+    </div> 
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 "><p id="username" style="text-align: center; font-size: 150%; font-weight: bold; letter-spacing: 1px;"></p></div>
     </div>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-sm-4"><h3>Datos personales:</h3></div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 " ><h6>Nombre:</h6><p id="name"></p></div>
+      <div class="col-sm-4"><input type="text" id="name1" placeholder="Ingrese su nombre" style="width: 100%;" disabled></div>
+    </div> 
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 " ><h6>Apellidos:</h6><p id="surname"></p></div>
+      <div class="col-sm-4"><input type="text" id="surname1" placeholder="Ingrese sus apellidos" style="width: 100%;" disabled></div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 "><h6>Edad:</h6><p id="age"></p></div>
+      <div class="col-sm-4"><input type="number" id="age1" placeholder="Ingrese su edad" style="width: 100%;" disabled></div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-sm-4"><h3>Informacion de contacto:</h3></div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 " ><h6>E-mail:</h6><p id="email"></p></div>
+      <div class="col-sm-4"><input type="text" id="email1" placeholder="Ingrese su E-mail" style="width: 100%;" disabled></div>
+    </div> 
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 "><h6>Telefono de contacto:</h6><p id="contact"></div>
+      <div class="col-sm-4"><input type="text" id="contact1" placeholder="Ingrese su numero de contacto" style="width: 100%;" disabled></div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4 "><h6>Direccion:</h6><p id="direction"></div>
+      <div class="col-sm-4"><input type="text" id="direction1" placeholder="Ingrese su direccion" style="width: 100%;" disabled></div>
+    </div>
+
+    <div class="row mt-3 justify-content-center">
+      <div class="col-sm-4"><button class="btn w-100" id="change">Cambiar Datos</button></div>
+      <div class="col-sm-4"><button class="btn w-100" id="save">Guardar cambios</button></div>
+    </div>
+    
+        
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

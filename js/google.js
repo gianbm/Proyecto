@@ -13,9 +13,12 @@
         let users = {};
         
         users.nombre = profile.getName()
-        users.img = profile.getImageUrl()
+        users.img = profile.getImageUrl()  
+        users.mail = profile.getEmail()
+        users.name = profile.getGivenName()
+        users.surname = profile.getFamilyName()
    
-        var id_token = googleUser.getAuthResponse().id_token;
+        var id_token = googleUser.getAuthResponse().id_token; 
         console.log("ID Token: " + id_token);
 
         location.href ='index.html';

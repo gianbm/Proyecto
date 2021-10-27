@@ -26,24 +26,34 @@ function showProductsList(array){
         
         if( products.cost >= minimo && products.cost <= maximo){
 
-            htmlContentToAppend += `<a href='product-info.html'>
-            <div class="list-group-item list-group-item-action  mt-1 " id="cont">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ products.name +`</h4>
-                            <small class="text-muted">` + products.soldCount + ` artículos</small>
+            htmlContentToAppend += `
+            
+                <div class="list-group ml-4 mt-4">
+                    <a href='product-info.html' class="list-group-item list-group-item-action" >
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-fluid">
+                            </div>
+
+                            <div class="col-sm-7">
+                                <h4 class="text-sm-left font-weight-bold">`+ products.name +`</h4>
+                                <div class="row justify-content-left mt-4 ml-1 tex">
+                                <p class="class="col-sm-7 >` + products.description + `</p>  
+                                </div>
+                            </div>
+
+                            <div class="col-sm">
+                                <p class="text-muted mt-2">` + products.soldCount + ` artículos</p> 
+                                <div class="row mt-5">
+                                <p class="mt-5 font-size-5">Precio:` + products.cost + `</p>        
+                                </div>
+                            </div>
+    
                         </div>
-                            <p class="mb-1">` + products.description + `</p>
-                    </div>  
-                    <p class="precio">Precio:` + products.cost + `</p>            
+                        
+                    </a>
                 </div>
-                 
-            </div>
-            </a>
+            
             `   
 
             document.getElementById("productos").innerHTML = htmlContentToAppend;

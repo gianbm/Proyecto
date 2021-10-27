@@ -209,41 +209,6 @@ a.custom-card:hover {
 }
 
 
-
-.precio{  
-  margin-left: 88%;
-  font-weight: bold;
-  font-size: x-large;
-  
-}
-
-#busqueda{
-  width: 91%;
-  margin-left: 4%;
-  margin-top: 1%;
-  display: flex;
-}
-
-#precio{
-  display: flex;
-  justify-content: center;
-  margin-left: 5%;
-}
-
-#precio input{
-  margin-left: 2%;
-}
-
-#precio button{
-  margin-left: 2%;
-}
-
-.filter{
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
-
 #orden{
   margin-left: 5%;
 }
@@ -252,11 +217,6 @@ a.custom-card:hover {
   width: 100%;
  }
 
-#cont{
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 #productos a{
   text-decoration: none;
@@ -280,38 +240,6 @@ a.custom-card:hover {
 .galeria img{
   width: 30%;
   margin: 1%;
-}
-
-.costo{
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.costo p{
-  margin-left: 5%;
-}
-
-.pr{
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.ventas{
-  font-size: 17px;
-  color: gray;
-  margin-top: -5%;
-}
-
-.descripcion{
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
 }
 
 .Idesc{
@@ -394,9 +322,13 @@ a.custom-card:hover {
   text-align: center;
 }
 
+#change:hover{
+  background-color: yellow;
+}
 
-
-
+#save:hover{
+  background-color: green;
+}
 
 
 
