@@ -37,59 +37,62 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between" id="menu">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="btn-group" >
-        <a href="my-profile.html"><button class="btn btn-secondary" id="users" type="button" ></button></a>
-        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-        <div class="dropdown-menu" >
-        <a href="my-profile.html"><button class="dropdown-item" type="button" >Mi perfil</button></a>
-          <a href="cart.html"><button class="dropdown-item" type="button" id="cart">Mi carrito</button></a>
-          <button class="dropdown-item desc" type="button" onclick="desconectar();">Cerrar sesion</button>
+    <div class="container">
+      <div class="row">
+        <a class="col-sm-3 py-2" href="index.html">Inicio</a>
+        <a class="col-sm-3 py-2" href="categories.html">Categorías</a>
+        <a class="col-sm-3 py-2 " href="products.html">Productos</a>
+        <a class="col-sm-3 py-2 " href="sell.html">Vender</a>
+        <div class="col-sm btn-group" >
+          <a href="my-profile.html"><button class="btn btn-secondary" type="button" id='users'></button></a>
+          <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" >
+          <a href="my-profile.html"><button class="dropdown-item" type="button" >Mi perfil</button></a>
+            <a href="cart.html"><button class="dropdown-item" type="button" id="cart">Mi carrito</button></a>
+            <button class="dropdown-item desc" type="button" onclick="desconectar();">Cerrar sesion</button>
+          </div>
         </div>
       </div>
     </div>
   </nav>
   <div class="container mt-5 mb-5" id="data">
     <div class="row justify-content-center">
-      <div class="col-sm-4 " id="imagen">Imagen perfil</div>
+      <div class="col-sm-4 "><img src="" class="w-50 border rounded-circle" id="imagen" alt="imagen de perfil"></div>
+      <div class="col-sm-4 mt-5"><input type="file" id="imagen2" class="mt-4" onchange="foto()" accept="image/png, image/jpeg" disabled></div>
     </div> 
     <div class="row mt-3 justify-content-center">
       <div class="col-sm-4 "><p id="username" style="text-align: center; font-size: 150%; font-weight: bold; letter-spacing: 1px;"></p></div>
     </div>
-    <div class="row mt-4 justify-content-center">
+    <div class="row mt-3 justify-content-center">
       <div class="col-sm-4"><h3>Datos personales:</h3></div>
     </div>
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 " ><h6>Nombre:</h6><p id="name"></p></div>
+      <div class="col-sm-4"><h6>Nombre:</h6><p class="texto" id="name"></p></div>
       <div class="col-sm-4"><input type="text" id="name1" placeholder="Ingrese su nombre" style="width: 100%;" disabled></div>
     </div> 
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 " ><h6>Apellidos:</h6><p id="surname"></p></div>
+      <div class="col-sm-4 " ><h6>Apellidos:</h6><p class="texto" id="surname"></p></div>
       <div class="col-sm-4"><input type="text" id="surname1" placeholder="Ingrese sus apellidos" style="width: 100%;" disabled></div>
     </div>
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 "><h6>Edad:</h6><p id="age"></p></div>
+      <div class="col-sm-4 "><h6>Edad:</h6><p class="texto" id="age"></p></div>
       <div class="col-sm-4"><input type="number" id="age1" placeholder="Ingrese su edad" style="width: 100%;" disabled></div>
     </div>
     <div class="row mt-4 justify-content-center">
       <div class="col-sm-4"><h3>Informacion de contacto:</h3></div>
     </div>
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 " ><h6>E-mail:</h6><p id="email"></p></div>
+      <div class="col-sm-4 " ><h6>E-mail:</h6><p class="texto" id="email"></p></div>
       <div class="col-sm-4"><input type="text" id="email1" placeholder="Ingrese su E-mail" style="width: 100%;" disabled></div>
     </div> 
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 "><h6>Telefono de contacto:</h6><p id="contact"></div>
+      <div class="col-sm-4 "><h6>Telefono de contacto:</h6><p class="texto" id="contact"></p></div>
       <div class="col-sm-4"><input type="text" id="contact1" placeholder="Ingrese su numero de contacto" style="width: 100%;" disabled></div>
     </div>
     <div class="row mt-3 justify-content-center">
-      <div class="col-sm-4 "><h6>Direccion:</h6><p id="direction"></div>
+      <div class="col-sm-4 "><h6>Direccion:</h6><p class="texto" id="direction"></p></div>
       <div class="col-sm-4"><input type="text" id="direction1" placeholder="Ingrese su direccion" style="width: 100%;" disabled></div>
     </div>
 
