@@ -27,22 +27,28 @@ function mostrarDatos(){
 
     if(us.img == undefined){
         document.getElementById('imagen').src = "img/perfil.png"
+        document.getElementById('name') = ""
+        document.getElementById('surname') = ""
+        document.getElementById('age') = ""
+        document.getElementById('email') = ""
+        document.getElementById('contact') = ""
+        document.getElementById('direction') = ""
 
     } else {
         document.getElementById('imagen').src = us.img
     }
 
-    document.getElementById('username').innerHTML = us.nombre
-    document.getElementById('name').innerHTML = us.name 
+    document.getElementById('username').innerHTML += us.nombre
+    document.getElementById('name').innerHTML += us.name 
     document.getElementById('surname').innerHTML = us.surname
-    document.getElementById('age').innerHTML = us.age
-    document.getElementById('email') .innerHTML = us.mail
-    document.getElementById('contact').innerHTML = us.contacto
-    document.getElementById('direction').innerHTML = us.direccion
+    document.getElementById('age').innerHTML += us.age
+    document.getElementById('email') .innerHTML += us.mail
+    document.getElementById('contact').innerHTML += us.contacto
+    document.getElementById('direction').innerHTML += us.direccion
     
 }
 
-    
+
 
 
 
@@ -66,7 +72,6 @@ function foto(){
 
 
 
-
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -75,16 +80,20 @@ function foto(){
 
 document.addEventListener("DOMContentLoaded", function (e) {
     
-
+    
     document.getElementById('change').addEventListener('click' , () => {
         activar()
     })
 
     document.getElementById('save').addEventListener('click' , () => {
         guardarCambios()
+        
         location.reload()
+        
     })
+    
     mostrarDatos()
-   
+    
+
 
 });
