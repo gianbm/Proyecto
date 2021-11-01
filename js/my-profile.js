@@ -27,6 +27,7 @@ function mostrarDatos(){
 
     if(us.img == undefined){
         document.getElementById('imagen').src = "img/perfil.png"
+        document.getElementById('username') = us.nombre
         document.getElementById('name') = ""
         document.getElementById('surname') = ""
         document.getElementById('age') = ""
