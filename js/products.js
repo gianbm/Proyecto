@@ -28,31 +28,18 @@ function showProductsList(array){
 
             htmlContentToAppend += `
             
-                <div class="list-group ml-4 mt-4">
-                    <a href='product-info.html' class="list-group-item list-group-item-action" >
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-fluid">
-                            </div>
-
-                            <div class="col-sm-7">
-                                <h4 class="text-sm-left font-weight-bold">`+ products.name +`</h4>
-                                <div class="row justify-content-left mt-4 ml-1 tex">
-                                <p class="class="col-sm-7 >` + products.description + `</p>  
-                                </div>
-                            </div>
-
-                            <div class="col-sm">
-                                <p class="text-muted mt-2">` + products.soldCount + ` artículos</p> 
-                                <div class="row mt-5">
-                                <p class="mt-5 font-size-5">Precio:` + products.cost + `</p>        
-                                </div>
-                            </div>
-    
-                        </div>
-                        
+                <div class="col-xl-3">
+                    <a href='product-info.html' class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top"  src="` + products.imgSrc + `">
+                    <h4 class="text-sm-left font-weight-bold">`+ products.name +`</h4>
+                    <div class="card-body">
+                        <p class="card-text">` + products.description + `</p>
+                        <p class="mt-1 font-size-5">Precio:` + products.cost + `</p> 
+                        <p class="text-muted mt-2">` + products.soldCount + ` artículos</p>              
+                    
+                    </div>
                     </a>
-                </div>
+              </div>
             
             `   
 
