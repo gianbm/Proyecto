@@ -37,6 +37,9 @@ function mostrarDatos(){
 
     } else {
         document.getElementById('imagen').src = us.img
+        document.getElementById('age') = ""
+        document.getElementById('contact') = ""
+        document.getElementById('direction') = ""
     }
 
     document.getElementById('username').innerHTML += us.nombre
