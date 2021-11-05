@@ -35,9 +35,10 @@ function mostrarDatos(){
         document.getElementById('contact') = ""
         document.getElementById('direction') = ""
 
-    } else {
+    } else{
         document.getElementById('imagen').src = us.img
-    }
+    } 
+
     document.getElementById('username').innerHTML += us.nombre
     document.getElementById('name').innerHTML += us.name 
     document.getElementById('surname').innerHTML = us.surname
