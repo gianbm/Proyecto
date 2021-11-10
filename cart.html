@@ -10,9 +10,7 @@
     />
     <meta name="description" content="" />
     <meta name="google-signin-scope" content="profile email" />
-    <meta
-      name="google-signin-client_id"
-      content="332427920936-91lb1fsniom3ho7rjfplk02650g2ah18.apps.googleusercontent.com"
+    <meta name="google-signin-client_id" content="332427920936-91lb1fsniom3ho7rjfplk02650g2ah18.apps.googleusercontent.com"
     />
     <title>eMercado - Todo lo que busques está aquí</title>
 
@@ -20,9 +18,7 @@
       rel="canonical"
       href="https://getbootstrap.com/docs/4.3/examples/album/"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"
     />
 
     <style>
@@ -105,53 +101,86 @@
           <th>Moneda</th>
           <th>Precio unitario</th>
           <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </table>
+      <table id="totalprod" class="table table-striped table-dark">
+        <tr>
+        <th>Total:</th>
+        <th id="total"></th>
         </tr>
       </table>
     </div>
     <br />
     <div style="width: 69%; margin: 0px auto;">
-      
-      <h4>Envio</h4>
-      <input type="text" placeholder="Calle" />
-      <input type="text" placeholder="Esquina" />
-      <input type="text" placeholder="Numero" />
-      <input type="text" placeholder="Pais" />
-      <hr />
-      
-      <div style="width: 100%; display: flex; justify-content: space-between;">
-      <h5>Tipo de envio:</h5>
-      <div id="envio" style=" width: 30%; margin-left: -29%;">
-        <label for="envio1">
-          <input name="envio1 " type="radio"/>
-          Premium (2-5 dias)
-        </label>
-        <label for="envio2">
-          <input name="envio2 " type="radio" />
-          Express (5-8 dias)
-        </label>
-        <label for="envio3">
-          <input name="envio3" type="radio"/>
-          Standard (12-15 dias)
-        </label>
-      </div>
-      <div id="tot" style="width: 10%; margin-right: 15%; display: flex; justify-content: space-between;">
-        <h4>Total:</h4>
-        <p id="total" style="font-size: 20px; margin-left: 1%;"></p>
-      </div>
-      </div>
-      <div>
-        <h4>Forma de pago:</h4>
-        <label for="pago1">
-          <input name="pago1 " type="radio"/>
-          Tarjeta de credito
-        </label>
-        <label for="pago2">
-          <input name="pago2 " type="radio" />
-          Transferencia bancara
-        </label>
-        
-      </div>    
+            
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Finalizar compra
+    </button>
 
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Finalizar compra</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <h5>Envio</h5>
+              <input type="text" placeholder="Calle" />
+              <input type="text" placeholder="Esquina" />
+              <input type="text" placeholder="Numero" />
+              <input type="text" placeholder="Pais" />
+              <hr />
+
+              <h5>Tipo de envio:</h5>
+              <div id="envio" >
+                <label for="envio1">
+                  <input name="envio" type="radio" value="1.15000005" onclick="calcularSubTotal()"/>
+                  Premium (2-5 dias) (15%)
+                </label>
+                <br>
+                <label for="envio2">
+                  <input name="envio" type="radio" value="1.07" onclick="calcularSubTotal()"/>
+                  Express (5-8 dias) (7%)
+                </label>
+                <br>
+                <label for="envio3">
+                  <input name="envio" type="radio" value="1.05" onclick="calcularSubTotal()"/>
+                  Standard (12-15 dias) (5%)
+                </label>
+              </div>
+             
+              </div>
+              <div>
+                <h4>Forma de pago:</h4>
+                <label for="pago1">
+                  <input name="pago1 " type="radio"/>
+                  Tarjeta de credito
+                </label>
+                <br>
+                <label for="pago2">
+                  <input name="pago2 " type="radio" />
+                  Transferencia bancara
+                </label>
+              </div>   
+              
+              <div>
+                <h5>Total:</h5>
+                <p id="total1"></p>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
     
     <div id="spinner-wrapper">
       <div class="lds-ring">

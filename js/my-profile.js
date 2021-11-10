@@ -24,7 +24,7 @@ function guardarCambios(){
 
 function mostrarDatos(){
     let us = JSON.parse(localStorage.getItem('users'))
-
+    
     if(us.img == undefined){
         document.getElementById('imagen').src = "img/perfil.png"
         document.getElementById('username').innerHTML += us.nombre

@@ -312,6 +312,13 @@ a.custom-card:hover {
   text-align: center;
 }
 
+#totalprod{
+  width: 70%;
+  margin: 0px auto ;
+  text-align: right;
+  font-size: 20px;
+}
+
 #change:hover{
   background-color: yellow;
 }
