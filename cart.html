@@ -93,16 +93,7 @@
       </div>
     </nav>
     <div id="prod">
-      <table id="productosV" class="table table-striped table-dark">
-        <tr style="text-align: center">
-          <th style="width: 20%"></th>
-          <th>Producto</th>
-          <th>Cant.</th>
-          <th>Moneda</th>
-          <th>Precio unitario</th>
-          <th>Subtotal</th>
-          <th></th>
-        </tr>
+      <table id="productosV" class="table table-striped table-dark">  
       </table>
       <table id="totalprod" class="table table-striped table-dark">
         <tr>
@@ -112,9 +103,9 @@
       </table>
     </div>
     <br />
-    <div style="width: 69%; margin: 0px auto;">
+    <div style="width: 68.5%; margin: 0px auto; margin-top: -2.5%;">
             
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-dark w-100" data-toggle="modal" data-target="#exampleModal">
       Finalizar compra
     </button>
 
@@ -128,55 +119,47 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div>
-              <h5>Envio</h5>
-              <input type="text" placeholder="Calle" />
-              <input type="text" placeholder="Esquina" />
-              <input type="text" placeholder="Numero" />
-              <input type="text" placeholder="Pais" />
-              <hr />
+          
+            <div class="modal-body">  
+              <form id="bpg">        
+              <div>
+                <h5>Envio</h5>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Calle" name="dir"/>
+                  <input type="text" class="form-control mt-1" placeholder="Esquina" name="dir"/>
+                  <input type="text" class="form-control mt-1" placeholder="Numero" name="dir"/>
+                  <input type="text" class="form-control mt-1" placeholder="Pais y ciudad" name="dir"/>
+                </div>
+      
+                <hr />
 
-              <h5>Tipo de envio:</h5>
-              <div id="envio" >
-                <label for="envio1">
-                  <input name="envio" type="radio" value="1.15000005" onclick="calcularSubTotal()"/>
-                  Premium (2-5 dias) (15%)
-                </label>
-                <br>
-                <label for="envio2">
-                  <input name="envio" type="radio" value="1.07" onclick="calcularSubTotal()"/>
-                  Express (5-8 dias) (7%)
-                </label>
-                <br>
-                <label for="envio3">
-                  <input name="envio" type="radio" value="1.05" onclick="calcularSubTotal()"/>
-                  Standard (12-15 dias) (5%)
-                </label>
+                
+                  <h4>Tipo de envio:</h4>
+                  <div class="form-group">
+                    <select class="form-control" id="envio" onchange="calcularSubTotal()">
+                      <option value="local" selected>Retiro en el local</option>
+                      <option value="premium">Premium (2-5 dias)</option>
+                      <option value="express">Express (5-8 dias)</option>
+                      <option value="standard">Standard (12-15 dias)</option>
+                    </select>
+                    <small class="text-muted">*Si no selecciona ningun tipo de envio se considerara que lo retira en el local</small>
+                    <br>
+                    <div id="costoE"></div>
+                  </div>
+                  
+                </div>
+                <br>    
+                <!--<div>          
+                </div>
+                              
+                -->
+                <div>
+                  <h5>Total:</h5>
+                  <p id="total1"></p>
+                </div>
               </div>
-             
-              </div>
-              <div>
-                <h4>Forma de pago:</h4>
-                <label for="pago1">
-                  <input name="pago1 " type="radio"/>
-                  Tarjeta de credito
-                </label>
-                <br>
-                <label for="pago2">
-                  <input name="pago2 " type="radio" />
-                  Transferencia bancara
-                </label>
-              </div>   
-              
-              <div>
-                <h5>Total:</h5>
-                <p id="total1"></p>
-              </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+              <div id="but" class="p-1"><button type="submit" class="btn btn-success w-100 " id="pag">Siguiente</button></div>
+          </form>
         </div>
       </div>
     </div>
