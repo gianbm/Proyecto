@@ -1,4 +1,7 @@
 let cartArray = [];
+let subtotal = 0
+let total = 0
+let costo = 0
 
 
 function mostrarCarrito(carrito){
@@ -57,13 +60,14 @@ function mostrarCarrito(carrito){
 }
 
 function calcularSubTotal(){
-
+    total = 0
+    subtotal = 0
+    costo = 0
     let precisosU = document.getElementsByClassName('costo')
     let cantidad = document.getElementsByClassName('cantidad')
     let envio = document.getElementById('envio').value
-    let cuotas = document.getElementById('cuotas')
-    let subtotal = 0
-    let total = 0
+
+
     
     for(let i = 0; i < precisosU.length; i++){
 
@@ -75,25 +79,32 @@ function calcularSubTotal(){
 
     total += subtotal
 
+    
+
+
     if(envio == "local"){
-        total = total * 1
+        costo = 0
     } else if(envio == "standard"){
-        total = total * 1.05
+        costo = total * 0.05
     } else if(envio == "express"){
-        total = total * 1.07
+        costo = total * 0.07
     } else if(envio == "premium"){
-        total = total * 1.15
+        costo = total * 0.15
     }
-
     
-    
+    document.getElementById('total').innerHTML = '$'+(total + costo).toFixed(0)
+    document.getElementById('total1').innerHTML = '$'+(total + costo).toFixed(0)
+    document.getElementById('costoE').innerHTML = '<b>Su costo de envio es: $'+ costo.toFixed(0) +'</b>'   
 
-    document.getElementById('total').innerHTML = '$'+total.toFixed(0)
-    document.getElementById('total1').innerHTML = '$'+total.toFixed(0)
-    document.getElementById('costoE').innerHTML = '<b>Su costo de envio es: $'+ (total - subtotal).toFixed(0) +'</b>'
-    document.getElementById('cuotas1').innerHTML = '<b>' + cuotas.value +' cuotas de $'+ (total / cuotas.value).toFixed(0) + '</b>'
 
 } 
+
+function cuotas(){
+    let cuotas = document.getElementById('cuotasss')
+    document.getElementById('cuotas1').innerHTML = '<b>' + cuotas.value +' cuotas de $'+ (total / cuotas.value).toFixed(0) + '</b>'
+
+}
+
 
 function eliminar(posicion){
     const removed = cartArray.articles.splice(posicion, 1)
@@ -165,7 +176,7 @@ function tarjetaC(){
                 </div>
                 <div class="form-group col-md">
                 <label>Cuotas</label>
-                <input type="number" class="form-control" id="cuotas" min="1" max="18" onchange="calcularSubTotal()">
+                <input type="number" class="form-control" id="cuotasss" min="1" max="18" onchange="cuotas()">
                 </div>
                 
             </div>
@@ -235,7 +246,72 @@ function volver(){
 }	
 
 
+document.getElementById("pag").addEventListener("click", function(o){
+    o.preventDefault();
 
+    let dir = document.getElementsByName("dir")
+    for(let i = 0; i < dir.length; i++){
+        if(dir[i].value == ""){
+            dir[i].style.border = "1px solid red"
+        } else{
+            document.getElementById("bpg").innerHTML =`
+            <div>
+              <h4>Forma de pago:</h4>
+              <div class="form-group">
+                <select class="form-control" id="pago" onchange="seleccionar()">
+                  <option selected hidden value="">Elija su forma de pago</option>
+                  <option value="tarjetaC">Tarjeta de credito</option>
+                  <option value="tarjetaD">Tarjeta de debito</option>
+                  <option value="transf">Transferencia bancaria</option>
+                  <option value="efectivo">Efectivo</option>
+                </select>
+              </div>
+
+              <div id="metPago"></div> 
+                
+            </div>`
+        }
+    }
+    let forma = document.getElementById("pago")
+    if(forma.value == ""){
+        forma.style.border = "1px solid red"
+    } else if(forma.value == "tarjetaC"){
+        let cred = document.getElementsByName("credito")
+        for(let i = 0; i < cred.length; i++){
+            if(cred[i].value == ""){
+                cred[i].style.border = "1px solid red"
+            } else{
+                document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
+                document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
+                document.getElementById("pag").remove()
+                document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
+            }
+            
+    }} else if(forma.value == "tarjetaD"){
+        let deb = document.getElementsByName("debito")
+        for(let i = 0; i < deb.length; i++){
+            if(deb[i].value == ""){
+                deb[i].style.border = "1px solid red"
+            } else{
+                document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
+                document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
+                document.getElementById("pag").remove()
+                document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
+            }
+            
+    }} else if(forma.value == "transf"){
+        document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
+        document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
+        document.getElementById("pag").remove()
+        document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
+    } else if(forma.value == "efectivo"){
+        document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
+        document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
+        document.getElementById("pag").remove()
+        document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
+    }
+
+})
 
 
 
@@ -251,72 +327,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         mostrarCarrito(cartArray);
     })
     
-    document.getElementById("pag").addEventListener("click", function(o){
-        o.preventDefault();
-
-        let dir = document.getElementsByName("dir")
-        for(let i = 0; i < dir.length; i++){
-            if(dir[i].value == ""){
-                dir[i].style.border = "1px solid red"
-            } else{
-                document.getElementById("bpg").innerHTML =`
-                <div>
-                  <h4>Forma de pago:</h4>
-                  <div class="form-group">
-                    <select class="form-control" id="pago" onchange="seleccionar()">
-                      <option selected hidden value="">Elija su forma de pago</option>
-                      <option value="tarjetaC">Tarjeta de credito</option>
-                      <option value="tarjetaD">Tarjeta de debito</option>
-                      <option value="transf">Transferencia bancaria</option>
-                      <option value="efectivo">Efectivo</option>
-                    </select>
-                  </div>
-
-                  <div id="metPago"></div> 
-                    
-                </div>`
-            }
-        }
-        let forma = document.getElementById("pago")
-        if(forma.value == ""){
-            forma.style.border = "1px solid red"
-        } else if(forma.value == "tarjetaC"){
-            let cred = document.getElementsByName("credito")
-            for(let i = 0; i < cred.length; i++){
-                if(cred[i].value == ""){
-                    cred[i].style.border = "1px solid red"
-                } else{
-                    document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
-                    document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
-                    document.getElementById("pag").remove()
-                    document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
-                }
-                
-        }} else if(forma.value == "tarjetaD"){
-            let deb = document.getElementsByName("debito")
-            for(let i = 0; i < deb.length; i++){
-                if(deb[i].value == ""){
-                    deb[i].style.border = "1px solid red"
-                } else{
-                    document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
-                    document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
-                    document.getElementById("pag").remove()
-                    document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
-                }
-                
-        }} else if(forma.value == "transf"){
-            document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
-            document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
-            document.getElementById("pag").remove()
-            document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
-        } else if(forma.value == "efectivo"){
-            document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
-            document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
-            document.getElementById("pag").remove()
-            document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
-        }
-
-    })
+    
 
     calcularSubTotal()
 });
