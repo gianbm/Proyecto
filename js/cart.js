@@ -169,7 +169,7 @@ function tarjetaC(){
                 </div>
                 
             </div>
-            <div id="cuotas1">asdfasdf</div>
+            <div id="cuotas1"></div>
         </form>
 
     </div>    
