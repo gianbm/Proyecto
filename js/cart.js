@@ -103,7 +103,7 @@ function cuotas(){
     let cuotas = document.getElementById('cuotasss')
     document.getElementById('cuotas1').innerHTML = '<b>' + cuotas.value +' cuotas de $'+ (total / cuotas.value).toFixed(0) + '</b>'
 
-}s
+}
 
 
 function eliminar(posicion){
