@@ -11,6 +11,7 @@
         // The ID token you need to pass to your backend:
 
         let users = {};
+        
         users.id = profile.getId()
         users.nombre = profile.getName()
         users.img = profile.getImageUrl()  

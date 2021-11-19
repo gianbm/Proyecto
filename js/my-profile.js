@@ -35,17 +35,28 @@ function mostrarDatos(){
         document.getElementById('contact') = ""
         document.getElementById('direction') = ""
 
-    } else{
+    } else if(us.id != undefined ){
         document.getElementById('imagen').src = us.img
+        document.getElementById('username').innerHTML = us.nombre
+        document.getElementById('name').innerHTML = us.name 
+        document.getElementById('surname').innerHTML = us.surname
+        document.getElementById('age').innerHTML = ""
+        document.getElementById('email') .innerHTML = us.mail
+        document.getElementById('contact').innerHTML =""
+        document.getElementById('direction').innerHTML = ""
     } 
 
-    document.getElementById('username').innerHTML += us.nombre
-    document.getElementById('name').innerHTML += us.name 
+    document.getElementById('imagen').src = us.img
+    document.getElementById('username').innerHTML = us.nombre
+    document.getElementById('name').innerHTML = us.name 
     document.getElementById('surname').innerHTML = us.surname
-    document.getElementById('age').innerHTML += us.age
-    document.getElementById('email') .innerHTML += us.mail
-    document.getElementById('contact').innerHTML += us.contacto
-    document.getElementById('direction').innerHTML += us.direccion
+    document.getElementById('age').innerHTML = us.age
+    document.getElementById('email') .innerHTML = us.mail
+    document.getElementById('contact').innerHTML = us.contacto
+    document.getElementById('direction').innerHTML = us.direccion
+
+
+
     
 }
 
