@@ -150,7 +150,6 @@ function tarjetaC(){
     tarjeta =`
     <div>
         <h4>Datos de la tarjeta</h4>
-        <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label>Nombre</label>
@@ -181,7 +180,6 @@ function tarjetaC(){
                 
             </div>
             <div id="cuotas1"></div>
-        </form>
 
     </div>    
     `
@@ -194,7 +192,7 @@ function tarjetaD(){
     tarjetad =`
     <div>
         <h4>Datos de la tarjeta</h4>
-        <form>
+        
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label>Nombre</label>
@@ -219,7 +217,7 @@ function tarjetaD(){
                 <input type="month" class="form-control" placeholder="Vencimiento" name="debito">
                 </div>
             </div>
-        </form>
+        
 
     </div>    
     `
@@ -253,24 +251,7 @@ document.getElementById("pag").addEventListener("click", function(o){
     for(let i = 0; i < dir.length; i++){
         if(dir[i].value == ""){
             dir[i].style.border = "1px solid red"
-        } else{
-            document.getElementById("bpg").innerHTML =`
-            <div>
-              <h4>Forma de pago:</h4>
-              <div class="form-group">
-                <select class="form-control" id="pago" onchange="seleccionar()">
-                  <option selected hidden value="">Elija su forma de pago</option>
-                  <option value="tarjetaC">Tarjeta de credito</option>
-                  <option value="tarjetaD">Tarjeta de debito</option>
-                  <option value="transf">Transferencia bancaria</option>
-                  <option value="efectivo">Efectivo</option>
-                </select>
-              </div>
-
-              <div id="metPago"></div> 
-                
-            </div>`
-        }
+        } 
     }
     let forma = document.getElementById("pago")
     if(forma.value == ""){
@@ -280,6 +261,7 @@ document.getElementById("pag").addEventListener("click", function(o){
         for(let i = 0; i < cred.length; i++){
             if(cred[i].value == ""){
                 cred[i].style.border = "1px solid red"
+                o.preventDefault();
             } else{
                 document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
                 document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
@@ -292,6 +274,7 @@ document.getElementById("pag").addEventListener("click", function(o){
         for(let i = 0; i < deb.length; i++){
             if(deb[i].value == ""){
                 deb[i].style.border = "1px solid red"
+                o.preventDefault();
             } else{
                 document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
                 document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
@@ -300,10 +283,7 @@ document.getElementById("pag").addEventListener("click", function(o){
             }
             
     }} else if(forma.value == "transf"){
-        document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
-        document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`
-        document.getElementById("pag").remove()
-        document.getElementById("but").innerHTML =`<button type="button" class="btn btn-dark w-100" onclick="volver()" >Volver al inicio</button>`
+        document.getElementById("but").innerHTML =`<button type="submit" class="btn btn-dark w-100" onclick="volver()" >Finalizar</button>`
     } else if(forma.value == "efectivo"){
         document.getElementById("exampleModalLabel").innerHTML =`Compra finalizada`
         document.getElementById("bpg").innerHTML =`<h6>Compra realiza con exito</h6>`

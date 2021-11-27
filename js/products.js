@@ -94,6 +94,13 @@ function ordenarREL(){
     showProductsList()
 };
 
+function buscar(){
+    let buscar = document.getElementById('buscador').value;
+    let prod = productsArray.filter( producto =>{
+        return producto.name.toLowerCase().indexOf(buscar.toLowerCase()) >=-1;
+    });
+    showProductsList(prod)
+}
 
 
 
@@ -128,6 +135,5 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById('rel').addEventListener('click', () =>{
         ordenarREL();
     })
-
 });
 

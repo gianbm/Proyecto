@@ -121,8 +121,8 @@
           </div>
           
             <div class="modal-body">  
-              <form id="bpg">        
-              <div>
+              <form id="bpg" action="http://localhost:3000/compra" method="post">        
+              <div id="formu">
                 <h5>Envio</h5>
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Calle" name="dir"/>
@@ -137,14 +137,30 @@
                   <h4>Tipo de envio:</h4>
                   <div class="form-group">
                     <select class="form-control" id="envio" onchange="calcularSubTotal()">
-                      <option value="local" selected>Retiro en el local</option>
-                      <option value="premium">Premium (2-5 dias)</option>
-                      <option value="express">Express (5-8 dias)</option>
-                      <option value="standard">Standard (12-15 dias)</option>
+                      <option name="envio" value="local" selected>Retiro en el local</option>
+                      <option name="envio" value="premium">Premium (2-5 dias)</option>
+                      <option name="envio" value="express">Express (5-8 dias)</option>
+                      <option name="envio" value="standard">Standard (12-15 dias)</option>
                     </select>
                     <small class="text-muted">*Si no selecciona ningun tipo de envio se considerara que lo retira en el local</small>
                     <br>
                     <div id="costoE"></div>
+                  </div>
+
+                  <div>
+                    <h4>Forma de pago:</h4>
+                    <div class="form-group">
+                      <select class="form-control" id="pago" onchange="seleccionar()">
+                        <option selected hidden value="">Elija su forma de pago</option>
+                        <option name="pago" value="tarjetaC">Tarjeta de credito</option>
+                        <option name="pago" value="tarjetaD">Tarjeta de debito</option>
+                        <option name="pago" value="transf">Transferencia bancaria</option>
+                        <option name="pago" value="efectivo">Efectivo</option>
+                      </select>
+                    </div>
+      
+                    <div id="metPago"></div> 
+                      
                   </div>
                   
                 </div>
@@ -158,7 +174,7 @@
                   <p id="total1"></p>
                 </div>
               </div>
-              <div id="but" class="p-1"><button type="submit" class="btn btn-success w-100 " id="pag">Siguiente</button></div>
+              <div id="but" class="p-1"><button type="submit" class="btn btn-success w-100 " id="pag">Comprar</button></div>
           </form>
         </div>
       </div>
