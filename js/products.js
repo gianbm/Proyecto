@@ -3,6 +3,7 @@
 //elementos HTML presentes.
 
 let productsArray = [];
+let buscado = []
 
 function showProductsList(array){
 
@@ -22,7 +23,7 @@ function showProductsList(array){
     let htmlContentToAppend = "";   
 
 
-    for(products of productsArray){
+    for(products of array){
         
         if( products.cost >= minimo && products.cost <= maximo){
 
@@ -95,11 +96,11 @@ function ordenarREL(){
 };
 
 function buscar(){
-    let buscar = document.getElementById('buscador').value;
-    let prod = productsArray.filter( producto =>{
-        return producto.name.toLowerCase().indexOf(buscar.toLowerCase()) >=-1;
+    let elemento = document.getElementById('buscador').value;
+    let buscado = productsArray.filter( producto =>{
+        return producto.name.toLowerCase().indexOf(elemento.toLowerCase()) > -1;
     });
-    showProductsList(prod)
+    showProductsList(buscado)
 }
 
 
@@ -135,5 +136,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById('rel').addEventListener('click', () =>{
         ordenarREL();
     })
+
+    document.getElementById('buscador').addEventListener('keyup',()=>{
+        buscar();
+    });
+
+    document.getElementById("buscador").addEventListener("mouseover", buscar);
 });
 
